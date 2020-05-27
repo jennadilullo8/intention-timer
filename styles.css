@@ -1,0 +1,8 @@
+header {
+  background-color: #46424D;
+  color: #FFFF;
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  justify-content: center;
+  grid-area: header;
+}
