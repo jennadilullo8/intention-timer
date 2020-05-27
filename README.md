@@ -22,3 +22,28 @@ One partner will;
 - Add `index.html` and `styles.css` files
 - Add `assets` directory
 - Add all teammates and instructors as collaborators
+
+## Learning Goals
+
+- Develop your skills in writing:
+  - Semantic HTML
+  - Clean & organized CSS styles
+  - DRY and organized JavaScript
+- Manipulate the page after it has loaded adding, removing, and updating elements on the DOM
+- Understand event bubbling and use event delegation on dynamic elements
+- Persist data across page refreshes by using local storage
+
+## Wins
+
+## Challenges
+
+## Technologies used
+
+- HTML
+- CSS
+- JavaScript
+- Git/GitHub
+
+## In Action
+
+### Iteration 0
