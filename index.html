@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name=“viewport” content=“width=device-width, initial-scale=1”>
+    <title>Intention Timer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./styles.css">
+  </head>
+  <body>
+    <header>
+      <h2>INTENTION TIMER</h2>
+    </header>
+    <main>
+      <section class="new-activity">
+        <h2>New Activity</h2>
+          <section class="button-select-category">
+            <h4>Select a category:</h4>
+              <article class="button-section">
+                <button class="study"><img src="./assets/study.svg" alt="study-icon" width="25px">
+                  Study
+                </button>
+                <button class="meditate"><img src="./assets/meditate.svg" alt="meditate-icon" width="25px">
+                  Meditate
+                </button>
+                <button class="exercise"><img src="./assets/exercise.svg" alt="exercise-icon" width="25px">
+                  Exercise
+                </button>
+              </article>
+              <article class="what-would">
+                <label for="what-input">What would you like to accomplish during this time?</label>
+                <input type="text" name="what-input" id="what-input">
+              </article>
+              <article class="minutes">
+                <label for="minutes-input">Minutes</label>
+                <input type="text" name="minutes-input" id="minutes-input">
+              </article>
+              <article class="seconds">
+                <label for="seconds-input">Seconds</label>
+                <input type="text" name="seconds-input" id="seconds-input">
+              </article>
+              <button class="start-activity"><p>START ACTIVITY</p></button>
+          </section>
+      </section>
+    </main>
+    <aside>
+      <section class="past-activities">
+        <h2>Past Activities</h2>
+          <p>You haven't logged any activities yet</p>
+      </section>
+    </aside>
+  </body>
+</html>

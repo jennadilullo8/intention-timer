@@ -1,0 +1,110 @@
+/* GLOBAL VARIABLES */
+header {
+  grid-area: header;
+  background-color: #46424D;
+  color: #FFFF;
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  justify-content: center;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #46424D;
+  color: #FFFF;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 2fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "header header"
+    "main aside";
+}
+
+main {
+  grid-area: main;
+  background-color: #2B2733;
+  color: #CBC9CF;
+  padding: 10px;
+}
+
+aside {
+  grid-area: aside;
+  background-color: #2B2733;
+  color: #CBC9CF;
+  padding: 10px;
+}
+
+/* MAIN SECTION */
+.button-select-category {
+  background-color: #46424D;
+  color: #FFFF;
+  padding: 20px;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 5% 1fr 1fr 5%;
+  grid-template-rows: repeat(5, auto);
+  justify-content: space-around;
+}
+
+h4 {
+  grid-column-start: 2;
+  grid-row-start: 1;
+}
+
+.study, .exercise, .meditate {
+  background-color: #46424D;
+  color: #FFFF;
+  border-radius: 2px;
+  width: 150px;
+  height: 75px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-section {
+  display: flex;
+  justify-content: space-between;
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 2;
+}
+
+.what-would {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 3;
+}
+
+.minutes {
+  display: flex;
+  flex-direction: column;
+  grid-column-start: 2;
+  grid-row-start: 4;
+}
+
+.seconds {
+  display: flex;
+  flex-direction: column;
+  grid-column-start: 3;
+  grid-row-start: 4;
+}
+
+.start-activity {
+  grid-column-start: 3;
+  grid-row-start: 5;
+  width: 150px;
+  height: 50px;
+  border-radius: 2px;
+  display: flex;
+  font-size: 17px;
+  justify-content: center;
+  align-items: center;
+  justify-self: flex-end;
+}
