@@ -1,8 +1,35 @@
 header {
+  grid-area: header;
   background-color: #46424D;
   color: #FFFF;
   font-family: 'Montserrat', sans-serif;
   display: flex;
   justify-content: center;
-  grid-area: header;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #46424D;
+  color: #FFFF;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 2fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "header header"
+    "new-activity past-activities";
+}
+
+.new-activity {
+  grid-area: new-activity;
+  background-color: #2B2733;
+  color: #CBC9CF;
+  padding: 10px;
+}
+
+.past-activities {
+  grid-area: past-activities;
+  background-color: #2B2733;
+  color: #CBC9CF;
+  padding: 10px;
 }
