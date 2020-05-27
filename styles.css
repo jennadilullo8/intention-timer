@@ -34,3 +34,31 @@ aside {
   color: #CBC9CF;
   padding: 10px;
 }
+
+/* MAIN SECTION */
+.button-select-category {
+  background-color: #46424D;
+  color: #FFFF;
+  padding: 20px;
+}
+
+h4 {
+  padding: 20px;
+}
+
+.study, .exercise, .meditate {
+  background-color: #46424D;
+  color: #FFFF;
+  border-radius: 2px;
+  width: 150px;
+  height: 75px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-section {
+  display: flex;
+  justify-content: space-around;
+}
