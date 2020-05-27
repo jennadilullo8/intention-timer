@@ -8,3 +8,17 @@
  - Erin Untermeyer: https://github.com/ErinUntermeyer
 
 Performed the driver-navigator approach throughout the development of the entire project.
+
+## About
+
+The user can use this application to set goals for their health and productivity, tied to an amount of time. Users will select an activity category, set the amount of time they want to spend on that activity, and start the timer. The app will log that activity to keep track of how the user has been spending their time.
+
+## Setup
+
+One partner will;
+- Create a `repo` in github
+- `git clone` the `repo`
+- Add `src` directory containing `main.js` and `activity.js`
+- Add `index.html` and `styles.css` files
+- Add `assets` directory
+- Add all teammates and instructors as collaborators
