@@ -1,17 +1,18 @@
 /* GLOBAL VARIABLES */
+* {
+  color: #FFF;
+  font-family: 'Montserrat', sans-serif;
+}
+
 header {
   grid-area: header;
   background-color: #46424D;
-  color: #FFFF;
-  font-family: 'Montserrat', sans-serif;
   display: flex;
   justify-content: center;
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
   background-color: #46424D;
-  color: #FFFF;
   display: grid;
   grid-gap: 10px;
   grid-template-columns: 2fr;
@@ -35,29 +36,41 @@ aside {
   padding: 10px;
 }
 
+input {
+  border: 0;
+  border-bottom: 1px solid #FFF;
+  outline: 0;
+  background: transparent;
+  padding-top: 30px;
+}
+
+p {
+  margin: 0;
+  text-align: center;
+}
+
+h4 {
+  margin: 0;
+  grid-column-start: 2;
+  grid-row-start: 1;
+}
+
 /* MAIN SECTION */
 .button-select-category {
   background-color: #46424D;
-  color: #FFFF;
-  padding: 20px;
+  padding: 30px;
   display: grid;
-  grid-gap: 10px;
+  grid-gap: 20px;
   grid-template-columns: 5% 1fr 1fr 5%;
   grid-template-rows: repeat(5, auto);
   justify-content: space-around;
 }
 
-h4 {
-  grid-column-start: 2;
-  grid-row-start: 1;
-}
-
 .study, .exercise, .meditate {
   background-color: #46424D;
-  color: #FFFF;
   border-radius: 2px;
   width: 150px;
-  height: 75px;
+  height: 60px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -99,12 +112,12 @@ h4 {
 .start-activity {
   grid-column-start: 3;
   grid-row-start: 5;
-  width: 150px;
+  width: 70%;
   height: 50px;
   border-radius: 2px;
   display: flex;
   font-size: 17px;
   justify-content: center;
-  align-items: center;
   justify-self: flex-end;
+  color: #2B2733;
 }
