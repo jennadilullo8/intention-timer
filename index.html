@@ -32,11 +32,11 @@
               </article>
               <article class="minutes">
                 <label for="minutes-input">Minutes</label>
-                <input type="text" name="minutes-input" id="minutes-input">
+                <input type="number" min="0" onkeydown="return event.keyCode !== 69" name="minutes-input" id="minutes-input">
               </article>
               <article class="seconds">
                 <label for="seconds-input">Seconds</label>
-                <input type="text" name="seconds-input" id="seconds-input">
+                <input type="number" min="0" max="59" onkeydown="return event.keyCode !== 69" name="seconds-input" id="seconds-input">
               </article>
               <button class="start-activity">START ACTIVITY</button>
           </section>
