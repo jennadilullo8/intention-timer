@@ -35,7 +35,11 @@ One partner will;
 
 ## Wins
 
+- Obtaining a better understanding of `grid`
+
 ## Challenges
+
+- Understanding how to use `grid` and `flex-box` together
 
 ## Technologies used
 
@@ -47,3 +51,13 @@ One partner will;
 ## In Action
 
 ### Iteration 0
+
+- Create a page layout that is identical to the comp layout
+
+#### Comp Layout:
+
+<img src="/assets/comp-desktop.png" alt="Desktop layout comp" height=auto width=75%/>
+
+#### Our Layout:
+
+<img src="/assets/Our-Comp_layout.png" alt="Our desktop layout" height=auto width=75%/>
