@@ -77,6 +77,21 @@ h4 {
   justify-content: center;
 }
 
+.exercise-active {
+  border-color: #FD8078;
+  color: #FD8078;
+}
+
+.meditate-active {
+  border-color: #C278FD;
+  color: #C278FD;
+}
+
+.study-active {
+  border-color: #B3FD78;
+  color: #B3FD78;
+}
+
 .button-section {
   display: flex;
   justify-content: space-between;
