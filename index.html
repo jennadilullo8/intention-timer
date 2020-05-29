@@ -1,55 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
   <head>
     <meta name=“viewport” content=“width=device-width, initial-scale=1”>
     <title>Intention Timer</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="./styles.css">
+    <link href='https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap' rel='stylesheet'>
+    <link rel='stylesheet' type='text/css' href='./styles.css'>
   </head>
   <body>
     <header>
       <h2>INTENTION TIMER</h2>
     </header>
     <main>
-      <section class="new-activity">
+      <section class='new-activity'>
         <h2>New Activity</h2>
-          <section class="button-select-category">
+          <section class='button-select-category'>
             <h4>Select a category:</h4>
-              <article class="button-section">
-                <button class="study"><img src="./assets/study.svg" id="study-icon" width="25px">
+              <article class='button-section'>
+                <button class='study'><img src='./assets/study.svg' id='study-icon' width='25px'>
                   Study
                 </button>
-                <button class="meditate"><img src="./assets/meditate.svg" id="meditate-icon" width="25px">
+                <button class='meditate'><img src='./assets/meditate.svg' id='meditate-icon' width='25px'>
                   Meditate
                 </button>
-                <button class="exercise"><img src="./assets/exercise.svg" id="exercise-icon" width="25px">
+                <button class='exercise'><img src='./assets/exercise.svg' id='exercise-icon' width='25px'>
                   Exercise
                 </button>
               </article>
-              <article class="description">
-                <label for="description-input">What would you like to accomplish during this time?</label>
-                <input type="text" name="description-input" id="description-input">
+              <article class='description'>
+                <label for='description-input'>What would you like to accomplish during this time?</label>
+                <input type='text' name='description-input' id='description-input'>
               </article>
-              <article class="minutes">
-                <label for="minutes-input">Minutes</label>
-                <input type="number" min="0" onkeydown="return event.keyCode !== 69" name="minutes-input" id="minutes-input">
+              <article class='minutes'>
+                <label for='minutes-input'>Minutes</label>
+                <input type='number' min='0' onkeydown='return event.keyCode !== 69' name='minutes-input' id='minutes-input'>
               </article>
-              <article class="seconds">
-                <label for="seconds-input">Seconds</label>
-                <input type="number" min="0" max="59" onkeydown="return event.keyCode !== 69" name="seconds-input" id="seconds-input">
+              <article class='seconds'>
+                <label for='seconds-input'>Seconds</label>
+                <input type='number' min='0' max='59' onkeydown='return event.keyCode !== 69' name='seconds-input' id='seconds-input'>
               </article>
-              <button class="start-activity">START ACTIVITY</button>
+              <button class='start-activity'>START ACTIVITY</button>
           </section>
       </section>
     </main>
     <aside>
-      <section class="past-activities">
+      <section class='past-activities'>
         <h2>Past Activities</h2>
           <p>You haven't logged any activities yet.</p>
           <p>Complete the form to the left to get started!</p>
       </section>
     </aside>
-    <script src="./src/activity.js"></script>
-    <script src="./src/main.js"></script>
+    <script src='./src/activity.js'></script>
+    <script src='./src/main.js'></script>
   </body>
 </html>
