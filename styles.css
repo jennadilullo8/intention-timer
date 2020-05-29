@@ -100,7 +100,7 @@ h4 {
   grid-row-start: 2;
 }
 
-.what-would {
+.description {
   padding-top: 40px;
   padding-bottom: 40px;
   display: flex;
@@ -132,7 +132,7 @@ h4 {
   border-radius: 2px;
   display: flex;
   font-size: 17px;
-  align-items: center
+  align-items: center;
   justify-content: center;
   justify-self: flex-end;
   color: #2B2733;
