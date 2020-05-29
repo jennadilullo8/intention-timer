@@ -61,9 +61,6 @@ h3 {
   font-size: 50px;
   padding-bottom: 50px;
 }
-.hidden {
-  display: none;
-}
 
 /* MAIN SECTION */
 .button-select-category {
@@ -165,4 +162,8 @@ h3 {
   border-radius: 50%;
   margin: 20px;
   font-size: 20px;
+}
+
+.hidden {
+  display: none;
 }
