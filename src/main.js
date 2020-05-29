@@ -13,7 +13,7 @@ function clickHandler(event) {
   } else if (event.target.classList.contains('exercise')) {
     changeExerciseButton();
   } else if (event.target.classList.contains('start-activity')) {
-    newActivity(event);
+    newActivity();
   }
 }
 
@@ -42,9 +42,12 @@ function changeExerciseButton() {
 }
 
 function newActivity() {
+  var timerView = document.querySelector('.timer-view');
+  buttonSection.classList.add('hidden');
+  timerView.classList.remove('hidden');
   var category = currentCategory;
   var description = document.querySelector('#description-input').value;
-  var minutes = document.querySelector("#minutes-input").value;
-  var seconds = document.querySelector("#seconds-input").value;
+  var minutes = document.querySelector('#minutes-input').value;
+  var seconds = document.querySelector('#seconds-input').value;
   currentActivity = new Activity(category, description, minutes, seconds);
 }
