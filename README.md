@@ -36,10 +36,15 @@ One partner will;
 ## Wins
 
 - Obtaining a better understanding of `grid`
+- Update the data model before the DOM
+- Added functionality to the 'Start Activity' button
+- Created SRP functions
 
 ## Challenges
 
 - Understanding how to use `grid` and `flex-box` together
+- Manipulating the inputs to display error messages
+- Using descriptive but unique variable names
 
 ## Technologies used
 
@@ -61,3 +66,21 @@ One partner will;
 #### Our Layout:
 
 <img src="/assets/Our-Comp_layout.png" alt="Our desktop layout" height=auto width=75%/>
+
+### Iteration 1
+
+- Create the Activity class
+
+### Iteration 2
+
+- The gif will show;
+
+- When an activity category is clicked on, the border and icon will change colors to give a visual indication that it has been selected
+
+- As the user types into the input fields; the minutes and seconds fields should only accept numbers
+
+- When the Start Activity button is clicked, the user should no longer see the form, and instead see a timer clock. The timer clock should display the user-provided minutes and seconds, as well as the description. The category color will appear as the outline of the circle
+
+- If the Start Activity button is clicked before the user has entered information into all four inputs, the user will receive an error message, and if the minutes and seconds inputs are not filled out properly an error message will also appear
+
+<img src="http://g.recordit.co/W4WGWnhdbl.gif" alt="Start Activity Timer Display" height=auto width=75%/>
