@@ -29,21 +29,24 @@
               <article class='description'>
                 <label for='description-input'>What would you like to accomplish during this time?</label>
                 <input type='text' name='description-input' id='description-input'>
+                <label class="desc error hidden"><img src='./assets/warning.svg' width='15px'>A description is required.</label>
               </article>
               <article class='minutes'>
                 <label for='minutes-input'>Minutes</label>
-                <input type='number' min='0' onkeydown='return event.keyCode !== 69' name='minutes-input' id='minutes-input'>
+                <input type='number' min='0' max='59' onkeydown='return event.keyCode !== 69' name='minutes-input' id='minutes-input'>
+                <label class="min error hidden"><img src='./assets/warning.svg' width='15px'>Must be number between 1-59.</label>
               </article>
               <article class='seconds'>
                 <label for='seconds-input'>Seconds</label>
                 <input type='number' min='0' max='59' onkeydown='return event.keyCode !== 69' name='seconds-input' id='seconds-input'>
+                <label class="sec error hidden"><img src='./assets/warning.svg' width='15px'>Must be number between 1-59.</label>
               </article>
-              <button class='start-activity'>START ACTIVITY</button>
+              <button class='start-activity' disabled=true>START ACTIVITY</button>
           </section>
       </section>
       <section class='view timer-view hidden'>
         <article class='timer-section'>
-          <p>Deep Breathing</p>
+          <p class='descInput'>Deep Breathing</p>
           <h3>05:00</h3>
           <button class='timer'>
             START</button>
