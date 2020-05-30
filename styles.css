@@ -168,6 +168,10 @@ h3 {
   display: none;
 }
 
+.error {
+  color: #EFB7EC;
+}
+
 .study-button {
   border: #B3FD78 3px solid;
 }

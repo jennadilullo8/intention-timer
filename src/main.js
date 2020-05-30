@@ -1,18 +1,23 @@
 var buttonSection = document.querySelector('.button-select-category');
-
+var activityButton = document.querySelector('.start-activity');
 var minInput = document.querySelector('#minutes-input');
 var secInput = document.querySelector('#seconds-input');
-var descInput = document.querySelector(‘#description-input');
+var descInput = document.querySelector('#description-input');
 
 var currentActivity;
 var currentCategory;
 
 buttonSection.addEventListener('click', clickHandler);
+minInput.addEventListener('input', displayMinError);
+secInput.addEventListener('input', displaySecError);
+descInput.addEventListener('input', displayDescError);
+buttonSection.addEventListener('keyup', enableStartActivityButton)
+
 
 
 function clickHandler(event) {
   if (event.target.classList.contains('study')) {
-    changeStudyButton(event);
+    changeStudyButton();
   } else if (event.target.classList.contains('meditate')) {
     changeMeditateButton();
   } else if (event.target.classList.contains('exercise')) {
@@ -58,8 +63,8 @@ function newActivity() {
 }
 
 function updateDescription() {
-  var descInput = document.querySelector('.descInput');
-  descInput.innerText = descInput.value;
+  var userDescription = document.querySelector('.descInput');
+  userDescription.innerText = descInput.value;
 }
 
 function updateTimer() {
@@ -77,5 +82,35 @@ function updateColor() {
   }
   if (currentCategory === 'exercise') {
     timerButton.classList.add('exercise-button');
+  }
+}
+
+function displayMinError() {
+  var minErrorMessage = document.querySelector('.min');
+  if (minInput.checkValidity() === false) {
+    minErrorMessage.classList.remove('hidden');
+    activityButton.disabled = true;
+  }
+}
+
+function displaySecError() {
+  var secErrorMessage = document.querySelector('.sec');
+  if (secInput.checkValidity() === false) {
+    secErrorMessage.classList.remove('hidden');
+    activityButton.disabled = true;
+  }
+}
+
+function displayDescError() {
+  var descErrorMessage = document.querySelector('.desc');
+  if (descInput.value === '') {
+    descErrorMessage.classList.remove('hidden');
+    activityButton.disabled = true;
+  }
+}
+
+function enableStartActivityButton() {
+  if (currentCategory !== '' && descInput.value !== '' && minInput.value !== '' && secInput.value !== '') {
+    activityButton.disabled = false;
   }
 }
