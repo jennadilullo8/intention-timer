@@ -1,9 +1,14 @@
 var buttonSection = document.querySelector('.button-select-category');
 
+var minInput = document.querySelector('#minutes-input');
+var secInput = document.querySelector('#seconds-input');
+var descInput = document.querySelector(‘#description-input');
+
 var currentActivity;
-var currentCategory
+var currentCategory;
 
 buttonSection.addEventListener('click', clickHandler);
+
 
 function clickHandler(event) {
   if (event.target.classList.contains('study')) {
@@ -46,8 +51,31 @@ function newActivity() {
   buttonSection.classList.add('hidden');
   timerView.classList.remove('hidden');
   var category = currentCategory;
-  var description = document.querySelector('#description-input').value;
-  var minutes = document.querySelector('#minutes-input').value;
-  var seconds = document.querySelector('#seconds-input').value;
-  currentActivity = new Activity(category, description, minutes, seconds);
+  currentActivity = new Activity(category, descInput.value, minInput.value, secInput.value);
+  updateColor();
+  updateDescription();
+  updateTimer();
+}
+
+function updateDescription() {
+  var descInput = document.querySelector('.descInput');
+  descInput.innerText = descInput.value;
+}
+
+function updateTimer() {
+  var timerInput = document.querySelector('h3');
+  timerInput.innerText = `${minInput.value}:${secInput.value}`;
+}
+
+function updateColor() {
+  var timerButton = document.querySelector('.timer');
+  if (currentCategory === 'study') {
+    timerButton.classList.add('study-button');
+  }
+  if (currentCategory === 'meditate') {
+    timerButton.classList.add('meditate-button');
+  }
+  if (currentCategory === 'exercise') {
+    timerButton.classList.add('exercise-button');
+  }
 }
