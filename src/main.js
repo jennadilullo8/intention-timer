@@ -11,9 +11,7 @@ buttonSection.addEventListener('click', clickHandler);
 minInput.addEventListener('input', displayMinError);
 secInput.addEventListener('input', displaySecError);
 descInput.addEventListener('input', displayDescError);
-buttonSection.addEventListener('keyup', enableStartActivityButton)
-
-
+buttonSection.addEventListener('keyup', enableStartActivityButton);
 
 function clickHandler(event) {
   if (event.target.classList.contains('study')) {
@@ -25,7 +23,7 @@ function clickHandler(event) {
   } else if (event.target.classList.contains('start-activity')) {
     newActivity();
   }
-}
+};
 
 function changeStudyButton() {
   var studyButton = document.querySelector('.study');
@@ -33,7 +31,7 @@ function changeStudyButton() {
   studyButton.classList.toggle('study-active');
   studyImage.src = studyImage.src.match('assets/study.svg') ? 'assets/study-active.svg' : 'assets/study.svg';
   currentCategory = 'study';
-}
+};
 
 function changeMeditateButton() {
   var meditateButton = document.querySelector('.meditate');
@@ -41,7 +39,7 @@ function changeMeditateButton() {
   meditateButton.classList.toggle('meditate-active');
   meditateImage.src = meditateImage.src.match('assets/meditate.svg') ? 'assets/meditate-active.svg' : 'assets/meditate.svg';
   currentCategory = 'meditate';
-}
+};
 
 function changeExerciseButton() {
   var exerciseButton = document.querySelector('.exercise');
@@ -49,7 +47,7 @@ function changeExerciseButton() {
   exerciseButton.classList.toggle('exercise-active');
   exerciseImage.src = exerciseImage.src.match('assets/exercise.svg') ? 'assets/exercise-active.svg' : 'assets/exercise.svg';
   currentCategory = 'exercise';
-}
+};
 
 function newActivity() {
   var timerView = document.querySelector('.timer-view');
@@ -60,17 +58,17 @@ function newActivity() {
   updateColor();
   updateDescription();
   updateTimer();
-}
+};
 
 function updateDescription() {
   var userDescription = document.querySelector('.descInput');
   userDescription.innerText = descInput.value;
-}
+};
 
 function updateTimer() {
   var timerInput = document.querySelector('h3');
   timerInput.innerText = `${minInput.value}:${secInput.value}`;
-}
+};
 
 function updateColor() {
   var timerButton = document.querySelector('.timer');
@@ -83,7 +81,7 @@ function updateColor() {
   if (currentCategory === 'exercise') {
     timerButton.classList.add('exercise-button');
   }
-}
+};
 
 function displayMinError() {
   var minErrorMessage = document.querySelector('.min');
@@ -91,7 +89,7 @@ function displayMinError() {
     minErrorMessage.classList.remove('hidden');
     activityButton.disabled = true;
   }
-}
+};
 
 function displaySecError() {
   var secErrorMessage = document.querySelector('.sec');
@@ -99,7 +97,7 @@ function displaySecError() {
     secErrorMessage.classList.remove('hidden');
     activityButton.disabled = true;
   }
-}
+};
 
 function displayDescError() {
   var descErrorMessage = document.querySelector('.desc');
@@ -107,10 +105,10 @@ function displayDescError() {
     descErrorMessage.classList.remove('hidden');
     activityButton.disabled = true;
   }
-}
+};
 
 function enableStartActivityButton() {
   if (currentCategory !== '' && descInput.value !== '' && minInput.value !== '' && secInput.value !== '') {
     activityButton.disabled = false;
   }
-}
+};
