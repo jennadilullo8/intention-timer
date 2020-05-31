@@ -3,6 +3,8 @@ var activityButton = document.querySelector('.start-activity');
 var minInput = document.querySelector('#minutes-input');
 var secInput = document.querySelector('#seconds-input');
 var descInput = document.querySelector('#description-input');
+var timerButton = document.querySelector('.timer');
+var timerInput = document.querySelector('h3');
 
 var currentActivity;
 var currentCategory;
@@ -12,6 +14,9 @@ minInput.addEventListener('input', displayMinError);
 secInput.addEventListener('input', displaySecError);
 descInput.addEventListener('input', displayDescError);
 buttonSection.addEventListener('keyup', enableStartActivityButton);
+timerButton.addEventListener('click', function() {
+  currentActivity.startTimer();
+});
 
 function clickHandler(event) {
   if (event.target.classList.contains('study')) {
@@ -66,12 +71,10 @@ function updateDescription() {
 };
 
 function updateTimer() {
-  var timerInput = document.querySelector('h3');
   timerInput.innerText = `${minInput.value}:${secInput.value}`;
 };
 
 function updateColor() {
-  var timerButton = document.querySelector('.timer');
   if (currentCategory === 'study') {
     timerButton.classList.add('study-button');
   }
