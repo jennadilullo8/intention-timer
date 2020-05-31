@@ -23,6 +23,7 @@ class Activity {
       remainingSecs = totalTime % 60;
       if (totalTime < 0) {
         clearInterval(countDown);
+        timerButton.innerText = `You crushed and did it!`;
       }
     }, 1000);
   }
