@@ -39,12 +39,14 @@ One partner will;
 - Update the data model before the DOM
 - Added functionality to the 'Start Activity' button
 - Created SRP functions
+- Explaining how to create a timer
 
 ## Challenges
 
 - Understanding how to use `grid` and `flex-box` together
 - Manipulating the inputs to display error messages
 - Using descriptive but unique variable names
+- Creating the timer
 
 ## Technologies used
 
@@ -73,14 +75,19 @@ One partner will;
 
 ### Iteration 2
 
-- The gif will show;
+The gif will show;
 
 - When an activity category is clicked on, the border and icon will change colors to give a visual indication that it has been selected
-
 - As the user types into the input fields; the minutes and seconds fields should only accept numbers
-
 - When the Start Activity button is clicked, the user should no longer see the form, and instead see a timer clock. The timer clock should display the user-provided minutes and seconds, as well as the description. The category color will appear as the outline of the circle
-
 - If the Start Activity button is clicked before the user has entered information into all four inputs, the user will receive an error message, and if the minutes and seconds inputs are not filled out properly an error message will also appear
 
 <img src="http://g.recordit.co/W4WGWnhdbl.gif" alt="Start Activity Timer Display" height=auto width=75%/>
+
+### Iteration 3
+
+The gif will show;
+
+- When the user clicks on the 'START' button, the timer will count down by seconds and when the timer decrements to 0, the user will then see a congratulatory message
+
+<img src="http://g.recordit.co/SPKQV1Bm4p.gif" alt="Count Down Timer" height=auto width=75%/>
