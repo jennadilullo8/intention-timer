@@ -5,10 +5,19 @@ var secInput = document.querySelector('#seconds-input');
 var descInput = document.querySelector('#description-input');
 var timerButton = document.querySelector('.timer');
 var timerInput = document.querySelector('h3');
+var completeActiveDisplay = document.querySelector('.completed-activity-display');
+var newActiveDisplay = document.querySelector('.new-activity-display');
+var currentActiveDisplay = document.querySelector('.current-activity');
+var pastActivitiesParagraphs = document.querySelector('.past-activities-paragraphs');
+var createNewActivitySection = document.querySelector('.create-a-new-activity');
+var timerView = document.querySelector('.timer-view');
+var logActivityButton = document.querySelector('.log-activity');
 
+var savedActivities = [];
 var currentActivity;
 var currentCategory;
 
+logActivityButton.addEventListener('click', displayActivity);
 buttonSection.addEventListener('click', clickHandler);
 minInput.addEventListener('input', displayMinError);
 secInput.addEventListener('input', displaySecError);
@@ -60,17 +69,20 @@ function newActivity() {
   timerView.classList.remove('hidden');
   var category = currentCategory;
   currentActivity = new Activity(category, descInput.value, minInput.value, secInput.value);
+  savedActivities.push(currentActivity);
   updateColor();
   updateDescription();
   updateTimer();
 };
 
 function updateDescription() {
-  var userDescription = document.querySelector('.descInput');
+  var userDescription = document.querySelector('.desc-input');
   userDescription.innerText = descInput.value;
 };
 
 function updateTimer() {
+  newActiveDisplay.classList.add('hidden');
+  currentActiveDisplay.classList.remove('hidden');
   timerInput.innerText = `${minInput.value}:${secInput.value}`;
 };
 
@@ -113,5 +125,22 @@ function displayDescError() {
 function enableStartActivityButton() {
   if (currentCategory !== '' && descInput.value !== '' && minInput.value !== '' && secInput.value !== '') {
     activityButton.disabled = false;
+  }
+};
+
+function displayActivity() {
+  timerView.classList.add('hidden');
+  createNewActivitySection.classList.remove('hidden');
+  currentActiveDisplay.classList.add('hidden');
+  completeActiveDisplay.classList.remove('hidden');
+  pastActivitiesParagraphs.innerText = '';
+  for (var i = 0; i < savedActivities.length; i++) {
+    var pastActivityHTML = `
+    <article class='past-activities-article' data-id=${savedActivities[i].id}>
+     <h4 class='category-display'>${savedActivities[i].category.toUpperCase()}</h4>
+     <p class='time-display'>${savedActivities[i].minutes} MIN ${savedActivities[i].seconds} SECONDS</p>
+     <p class='description-display'>${savedActivities[i].description}</p>
+     </article> `
+     pastActivitiesParagraphs.insertAdjacentHTML('beforeend', pastActivityHTML);
   }
 };

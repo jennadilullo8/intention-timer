@@ -224,6 +224,6 @@ h3 {
 .time-display, .description-display {
   grid-column-start: 2;
   grid-row-start: 1;
-  line-height: 0;
+  display: flex;
   color: #B1B0B4;
 }
