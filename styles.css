@@ -212,8 +212,19 @@ h3 {
   width: 400px;
   margin: 20px;
   padding: 7px;
-  border-right: 5px solid #B3FD78;
   box-shadow: 3px 3px 5px 6px #26222D;
+}
+
+.border-right-exercise {
+  border-right: 5px solid #FD8078;
+}
+
+.border-right-study {
+  border-right: 5px solid #B3FD78;
+}
+
+.border-right-meditate {
+  border-right: 5px solid #C278FD;
 }
 
 .logged, .complete {

@@ -153,8 +153,9 @@ function displayActivity() {
   completeActiveDisplay.classList.remove('hidden');
   pastActivitiesParagraphs.innerText = '';
   for (var i = 0; i < savedActivities.length; i++) {
+    var className = updateColorBorder(savedActivities[i].category);
     var pastActivityHTML = `
-    <article class='past-activities-article' data-id=${savedActivities[i].id}>
+    <article class='past-activities-article ${className}' data-id=${savedActivities[i].id}>
      <h4 class='category-display'>${savedActivities[i].category.toUpperCase()}</h4>
      <p class='time-display'>${savedActivities[i].minutes} MIN ${savedActivities[i].seconds} SECONDS</p>
      <p class='description-display'>${savedActivities[i].description}</p>
@@ -170,4 +171,16 @@ function resetNewActivityPage() {
   createNewActivitySection.classList.add('hidden');
   clearInputs();
   clearCategory();
+};
+
+function updateColorBorder(category) {
+  var className = null;
+  if (category === 'study') {
+    className = 'border-right-study';
+  } else if (category === 'exercise') {
+    className = 'border-right-exercise';
+  } else if (category === 'meditate') {
+    className = 'border-right-meditate';
+  }
+  return className;
 };
