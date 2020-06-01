@@ -24,6 +24,7 @@ class Activity {
       if (totalTime < 0) {
         clearInterval(countDown);
         timerButton.innerText = `You crushed and did it!`;
+        logActivityButton.classList.remove('hidden');
       }
     }, 1000);
   }

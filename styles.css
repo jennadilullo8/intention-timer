@@ -62,7 +62,7 @@ h3 {
   padding-bottom: 50px;
 }
 
-/* MAIN SECTION */
+/* BUTTON SELECT CATEGORY SECTION */
 .button-select-category {
   background-color: #46424D;
   padding: 30px;
@@ -146,7 +146,7 @@ h3 {
 }
 
 /* TIMER SECTION */
-.timer-section {
+.timer-section, .create-a-new-activity {
   background-color: #46424D;
   padding: 40px;
   display: flex;
@@ -162,6 +162,10 @@ h3 {
   border-radius: 50%;
   margin: 20px;
   font-size: 20px;
+}
+
+.desc-input {
+  font-size: 17px;
 }
 
 .hidden {
@@ -182,4 +186,55 @@ h3 {
 
 .exercise-button {
   border: #FD8078 3px solid;
+}
+
+.log-activity, .create {
+  width: 30%;
+  height: 40px;
+  border-radius: 2px;
+  font-size: 17px;
+  margin: 10px;
+  color: #2B2733;
+}
+
+/* PAST ACTIVITIES SECTION */
+.past-activities {
+  display: flex;
+  flex-direction: column;
+}
+
+.past-activities-article {
+  background-color: #46424D;
+  font-size: 20px;
+  border-radius: 5px;
+  margin-bottom: 5%;
+  height: 100%;
+  width: 400px;
+  margin: 20px;
+  padding: 7px;
+  box-shadow: 3px 3px 5px 6px #26222D;
+}
+
+.border-right-exercise {
+  border-right: 5px solid #FD8078;
+}
+
+.border-right-study {
+  border-right: 5px solid #B3FD78;
+}
+
+.border-right-meditate {
+  border-right: 5px solid #C278FD;
+}
+
+.logged, .complete {
+  margin: 0;
+  text-align: center;
+}
+
+.time-display, .description-display {
+  grid-column-start: 2;
+  grid-row-start: 1;
+  display: flex;
+  color: #B1B0B4;
 }

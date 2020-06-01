@@ -12,7 +12,9 @@
     </header>
     <main>
       <section class='new-activity'>
-        <h2>New Activity</h2>
+        <h2 class='view new-activity-display'>New Activity</h2>
+        <h2 class='current-activity hidden'>Current Activity</h2>
+        <h2 class='view completed-activity-display hidden'>Completed Activity</h2>
           <section class='button-select-category'>
             <h4>Select a category:</h4>
               <article class='button-section'>
@@ -42,24 +44,29 @@
                 <label class="sec error hidden"><img src='./assets/warning.svg' width='15px'>Must be number between 1-59.</label>
               </article>
               <button class='start-activity' disabled=true>START ACTIVITY</button>
-          </section>
-      </section>
-      <section class='view timer-view hidden'>
-        <article class='timer-section'>
-          <p class='descInput'>Deep Breathing</p>
-          <h3>05:00</h3>
-          <button class='timer'>
-            START</button>
+            </section>
+        </section>
+        <section class='view timer-view hidden'>
+          <article class='timer-section'>
+            <p class='desc-input'>Deep Breathing</p>
+            <h3>05:00</h3>
+            <button class='timer'>START</button>
+            <button class='log-activity hidden'>LOG ACTIVITY</button>
+          </article>
+        </section>
+        <section class='view create-a-new-activity hidden'>
+          <button class='create'>CREATE A NEW ACTIVITY</button>
+        </section>
+      </main>
+      <aside>
+        <section class='past-activities'>
+          <h2>Past Activities</h2>
+        </section>
+        <article class='past-activities-paragraphs'>
+          <p class='logged'>You haven't logged any activities yet.</p>
+          <p class='complete'>Complete the form to the left to get started!</p>
         </article>
-      </section>
-    </main>
-    <aside>
-      <section class='past-activities'>
-        <h2>Past Activities</h2>
-          <p>You haven't logged any activities yet.</p>
-          <p>Complete the form to the left to get started!</p>
-      </section>
-    </aside>
+      </aside>
     <script src='./src/activity.js'></script>
     <script src='./src/main.js'></script>
   </body>
