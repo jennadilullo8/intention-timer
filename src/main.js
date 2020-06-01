@@ -30,15 +30,7 @@ minInput.addEventListener('input', displayMinError);
 secInput.addEventListener('input', displaySecError);
 descInput.addEventListener('input', displayDescError);
 buttonSection.addEventListener('keyup', enableStartActivityButton);
-createNewActivityButton.addEventListener('click', function() {
-  completeActiveDisplay.classList.add('hidden');
-  newActiveDisplay.classList.remove('hidden');
-  buttonSection.classList.remove('hidden');
-  createNewActivitySection.classList.add('hidden');
-  clearInputs();
-  clearCategory();
-});
-
+createNewActivityButton.addEventListener('click', resetNewActivityPage);
 timerButton.addEventListener('click', function() {
   currentActivity.startTimer();
 });
@@ -169,4 +161,13 @@ function displayActivity() {
      </article> `
      pastActivitiesParagraphs.insertAdjacentHTML('beforeend', pastActivityHTML);
   }
+};
+
+function resetNewActivityPage() {
+  completeActiveDisplay.classList.add('hidden');
+  newActiveDisplay.classList.remove('hidden');
+  buttonSection.classList.remove('hidden');
+  createNewActivitySection.classList.add('hidden');
+  clearInputs();
+  clearCategory();
 };
