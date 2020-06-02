@@ -18,6 +18,9 @@ var studyButton = document.querySelector('.study');
 var exerciseImage = document.querySelector('#exercise-icon');
 var meditateImage = document.querySelector('#meditate-icon');
 var studyImage = document.querySelector('#study-icon');
+var descErrorMessage = document.querySelector('.desc');
+var minErrorMessage = document.querySelector('.min');
+var secErrorMessage = document.querySelector('.sec');
 
 var savedActivities = [];
 var currentActivity;
@@ -123,7 +126,6 @@ function updateColor() {
 };
 
 function displayMinError() {
-  var minErrorMessage = document.querySelector('.min');
   if (minInput.checkValidity() === false) {
     minErrorMessage.classList.remove('hidden');
     activityButton.disabled = true;
@@ -131,7 +133,6 @@ function displayMinError() {
 };
 
 function displaySecError() {
-  var secErrorMessage = document.querySelector('.sec');
   if (secInput.checkValidity() === false) {
     secErrorMessage.classList.remove('hidden');
     activityButton.disabled = true;
@@ -139,7 +140,6 @@ function displaySecError() {
 };
 
 function displayDescError() {
-  var descErrorMessage = document.querySelector('.desc');
   if (descInput.value === '') {
     descErrorMessage.classList.remove('hidden');
     activityButton.disabled = true;
@@ -176,6 +176,9 @@ function resetNewActivityPage() {
   newActiveDisplay.classList.remove('hidden');
   buttonSection.classList.remove('hidden');
   createNewActivitySection.classList.add('hidden');
+  descErrorMessage.classList.add('hidden');
+  minErrorMessage.classList.add('hidden');
+  secErrorMessage.classList.add('hidden');
   clearInputs();
   clearCategory();
 };
