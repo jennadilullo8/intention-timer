@@ -13,10 +13,11 @@ header {
 }
 
 body {
+  margin: 0;
   background-color: #46424D;
   display: grid;
   grid-gap: 10px;
-  grid-template-columns: 2fr;
+  grid-template-columns: 65% 35%;
   grid-template-rows: auto;
   grid-template-areas:
     "header header"
@@ -28,6 +29,7 @@ main {
   background-color: #2B2733;
   color: #CBC9CF;
   padding: 10px;
+  height: 600px;
 }
 
 aside {
@@ -35,6 +37,8 @@ aside {
   background-color: #2B2733;
   color: #CBC9CF;
   padding: 10px;
+  height: 600px;
+  overflow-y: scroll;
 }
 
 input {
@@ -189,8 +193,8 @@ h3 {
 }
 
 .log-activity, .create {
-  width: 30%;
-  height: 40px;
+  width: auto;
+  height: 10%;
   border-radius: 2px;
   font-size: 17px;
   margin: 10px;
@@ -209,8 +213,6 @@ h3 {
   border-radius: 5px;
   margin-bottom: 5%;
   height: 100%;
-  width: 400px;
-  margin: 20px;
   padding: 7px;
   box-shadow: 3px 3px 5px 6px #26222D;
 }
