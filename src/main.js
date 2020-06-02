@@ -110,7 +110,7 @@ function updateDescription() {
 function updateTimer() {
   newActiveDisplay.classList.add('hidden');
   currentActiveDisplay.classList.remove('hidden');
-  timerInput.innerText = `${minInput.value.padStart(2, '0')}:${secInput.value.padStart(2, ‘0')}`;
+  timerInput.innerText = `${minInput.value.padStart(2, '0')}:${secInput.value.padStart(2, '0')}`;
 };
 
 function updateColor() {
@@ -181,16 +181,25 @@ function resetNewActivityPage() {
   secErrorMessage.classList.add('hidden');
   clearInputs();
   clearCategory();
+  resetTimerView()
 };
 
 function updateColorBorder(category) {
   var className = null;
   if (category === 'study') {
     className = 'border-right-study';
-  } else if (category === 'exercise') {
-    className = 'border-right-exercise';
   } else if (category === 'meditate') {
     className = 'border-right-meditate';
+  } else if (category === 'exercise') {
+    className = 'border-right-exercise';
   }
   return className;
 };
+
+function resetTimerView() {
+  logActivityButton.classList.add('hidden');
+  timerButton.innerText = "START";
+  timerButton.classList.remove('study-button');
+  timerButton.classList.remove('meditate-button');
+  timerButton.classList.remove('exercise-button');
+}
