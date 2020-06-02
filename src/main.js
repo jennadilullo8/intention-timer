@@ -8,7 +8,6 @@ var timerInput = document.querySelector('h3');
 var completeActiveDisplay = document.querySelector('.completed-activity-display');
 var newActiveDisplay = document.querySelector('.new-activity-display');
 var currentActiveDisplay = document.querySelector('.current-activity');
-var pastActivitiesParagraphs = document.querySelector('.past-activities-paragraphs');
 var createNewActivitySection = document.querySelector('.create-a-new-activity');
 var timerView = document.querySelector('.timer-view');
 var logActivityButton = document.querySelector('.log-activity');
@@ -19,17 +18,18 @@ var studyButton = document.querySelector('.study');
 var exerciseImage = document.querySelector('#exercise-icon');
 var meditateImage = document.querySelector('#meditate-icon');
 var studyImage = document.querySelector('#study-icon');
+var descErrorMessage = document.querySelector('.desc');
+var minErrorMessage = document.querySelector('.min');
+var secErrorMessage = document.querySelector('.sec');
 
 var savedActivities = [];
 var currentActivity;
 var currentCategory;
 
-logActivityButton.addEventListener('click', displayActivity);
 buttonSection.addEventListener('click', clickHandler);
-minInput.addEventListener('input', displayMinError);
-secInput.addEventListener('input', displaySecError);
-descInput.addEventListener('input', displayDescError);
+buttonSection.addEventListener('input', inputHandler);
 buttonSection.addEventListener('keyup', enableStartActivityButton);
+logActivityButton.addEventListener('click', displayActivity);
 createNewActivityButton.addEventListener('click', resetNewActivityPage);
 timerButton.addEventListener('click', function() {
   currentActivity.startTimer();
@@ -44,6 +44,12 @@ function clickHandler(event) {
     changeExerciseButton();
   } else if (event.target.classList.contains('start-activity')) {
     newActivity();
+  }
+};
+
+function inputHandler(event) {
+  if (event.target.matches('#minutes-input') || event.target.matches('#seconds-input') || event.target.matches('#description-input')) {
+    displayError();
   }
 };
 
@@ -77,33 +83,6 @@ function newActivity() {
   updateTimer();
 };
 
-function clearInputs() {
-  minInput.value = '';
-  secInput.value = '';
-  descInput.value = '';
-  currentActivity.value = '';
-};
-
-function clearCategory() {
-  studyButton.classList.remove('study-active');
-  meditateButton.classList.remove('meditate-active');
-  exerciseButton.classList.remove('exercise-active');
-  exerciseImage.src = 'assets/exercise.svg';
-  studyImage.src = 'assets/study.svg';
-  meditateImage.src = 'assets/meditate.svg';
-};
-
-function updateDescription() {
-  var userDescription = document.querySelector('.desc-input');
-  userDescription.innerText = descInput.value;
-};
-
-function updateTimer() {
-  newActiveDisplay.classList.add('hidden');
-  currentActiveDisplay.classList.remove('hidden');
-  timerInput.innerText = `${minInput.value}:${secInput.value}`;
-};
-
 function updateColor() {
   if (currentCategory === 'study') {
     timerButton.classList.add('study-button');
@@ -116,24 +95,26 @@ function updateColor() {
   }
 };
 
-function displayMinError() {
-  var minErrorMessage = document.querySelector('.min');
+function updateDescription() {
+  var userDescription = document.querySelector('.desc-input');
+  userDescription.innerText = descInput.value;
+};
+
+function updateTimer() {
+  newActiveDisplay.classList.add('hidden');
+  currentActiveDisplay.classList.remove('hidden');
+  timerInput.innerText = `${minInput.value.padStart(2, '0')}:${secInput.value.padStart(2, '0')}`;
+};
+
+function displayError() {
   if (minInput.checkValidity() === false) {
     minErrorMessage.classList.remove('hidden');
     activityButton.disabled = true;
   }
-};
-
-function displaySecError() {
-  var secErrorMessage = document.querySelector('.sec');
   if (secInput.checkValidity() === false) {
     secErrorMessage.classList.remove('hidden');
     activityButton.disabled = true;
   }
-};
-
-function displayDescError() {
-  var descErrorMessage = document.querySelector('.desc');
   if (descInput.value === '') {
     descErrorMessage.classList.remove('hidden');
     activityButton.disabled = true;
@@ -147,6 +128,7 @@ function enableStartActivityButton() {
 };
 
 function displayActivity() {
+  var pastActivitiesParagraphs = document.querySelector('.past-activities-paragraphs');
   timerView.classList.add('hidden');
   createNewActivitySection.classList.remove('hidden');
   currentActiveDisplay.classList.add('hidden');
@@ -164,23 +146,50 @@ function displayActivity() {
   }
 };
 
+function updateColorBorder(category) {
+  var className = null;
+  if (category === 'study') {
+    className = 'border-right-study';
+  } else if (category === 'meditate') {
+    className = 'border-right-meditate';
+  } else if (category === 'exercise') {
+    className = 'border-right-exercise';
+  }
+  return className;
+};
+
 function resetNewActivityPage() {
   completeActiveDisplay.classList.add('hidden');
   newActiveDisplay.classList.remove('hidden');
   buttonSection.classList.remove('hidden');
   createNewActivitySection.classList.add('hidden');
+  descErrorMessage.classList.add('hidden');
+  minErrorMessage.classList.add('hidden');
+  secErrorMessage.classList.add('hidden');
   clearInputs();
   clearCategory();
+  resetTimerView()
 };
 
-function updateColorBorder(category) {
-  var className = null;
-  if (category === 'study') {
-    className = 'border-right-study';
-  } else if (category === 'exercise') {
-    className = 'border-right-exercise';
-  } else if (category === 'meditate') {
-    className = 'border-right-meditate';
-  }
-  return className;
+function clearInputs() {
+  minInput.value = '';
+  secInput.value = '';
+  descInput.value = '';
 };
+
+function clearCategory() {
+  studyButton.classList.remove('study-active');
+  studyImage.src = 'assets/study.svg';
+  meditateButton.classList.remove('meditate-active');
+  meditateImage.src = 'assets/meditate.svg';
+  exerciseButton.classList.remove('exercise-active');
+  exerciseImage.src = 'assets/exercise.svg';
+};
+
+function resetTimerView() {
+  logActivityButton.classList.add('hidden');
+  timerButton.innerText = "START";
+  timerButton.classList.remove('study-button');
+  timerButton.classList.remove('meditate-button');
+  timerButton.classList.remove('exercise-button');
+}
