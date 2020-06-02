@@ -26,6 +26,7 @@ var savedActivities = [];
 var currentActivity;
 var currentCategory;
 
+window.onload = localStorageActivity();
 buttonSection.addEventListener('click', clickHandler);
 buttonSection.addEventListener('input', inputHandler);
 buttonSection.addEventListener('keyup', enableStartActivityButton);
@@ -81,6 +82,7 @@ function newActivity() {
   updateColor();
   updateDescription();
   updateTimer();
+  currentActivity.saveToStorage();
 };
 
 function updateColor() {
@@ -192,4 +194,18 @@ function resetTimerView() {
   timerButton.classList.remove('study-button');
   timerButton.classList.remove('meditate-button');
   timerButton.classList.remove('exercise-button');
+}
+
+function localStorageActivity() {
+  if (localStorage) {
+    for (var i = 0; i < localStorage.length; i++) {
+      var activityID = localStorage.key(i);
+      var activityObject = JSON.parse(localStorage.getItem(activityID));
+      activityObject = new Activity(activityObject.category, activityObject.description, activityObject.minutes, activityObject.seconds);
+      savedActivities.push(activityObject);
+      displayActivity();
+      createNewActivitySection.classList.add('hidden');
+      completeActiveDisplay.classList.add('hidden');
+    }
+  }
 }
