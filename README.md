@@ -15,13 +15,10 @@ The user can use this application to set goals for their health and productivity
 
 ## Setup
 
-One partner will;
-- Create a `repo` in github
-- `git clone` the `repo`
-- Add `src` directory containing `main.js` and `activity.js`
-- Add `index.html` and `styles.css` files
-- Add `assets` directory
-- Add all teammates and instructors as collaborators
+- Fork and clone down this repository
+- `cd` into the repository
+- In Terminal enter the command: `open index.html`
+- Have fun!
 
 ## Learning Goals
 
@@ -40,6 +37,7 @@ One partner will;
 - Added functionality to the 'Start Activity' button
 - Created SRP functions
 - Explaining how to create a timer
+- Successfully using localStorage
 
 ## Challenges
 
@@ -47,6 +45,8 @@ One partner will;
 - Manipulating the inputs to display error messages
 - Using descriptive but unique variable names
 - Creating the timer
+- Reseting timer display
+- Refactoring elements to show `SRP` and `DRY` code
 
 ## Technologies used
 
@@ -91,3 +91,22 @@ The gif will show;
 - When the user clicks on the 'START' button, the timer will count down by seconds and when the timer decrements to 0, the user will then see a congratulatory message
 
 <img src="http://g.recordit.co/SPKQV1Bm4p.gif" alt="Count Down Timer" height=auto width=75%/>
+
+### Iteration 4
+
+The gif will show;
+
+- When the user acknowledges the message and completion of the activity by clicking the 'Log Activity' button, a card with the category, time, and the users input will display.
+- The card should also have a small color-coded visual indicator of the category.
+
+<img src="http://g.recordit.co/u58U9UCEAc.gif" alt="Count Down Timer" height=auto width=75%/>
+
+
+### Iteration 5
+
+The gif will show;
+
+- When the user refreshes the page,
+    - Their past activities are still displayed!
+
+<img src="http://g.recordit.co/0Pk9uKytjW.gif" alt="Count Down Timer" height=auto width=75%/>
