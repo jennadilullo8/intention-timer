@@ -8,7 +8,6 @@ var timerInput = document.querySelector('h3');
 var completeActiveDisplay = document.querySelector('.completed-activity-display');
 var newActiveDisplay = document.querySelector('.new-activity-display');
 var currentActiveDisplay = document.querySelector('.current-activity');
-var pastActivitiesParagraphs = document.querySelector('.past-activities-paragraphs');
 var createNewActivitySection = document.querySelector('.create-a-new-activity');
 var timerView = document.querySelector('.timer-view');
 var logActivityButton = document.querySelector('.log-activity');
@@ -24,12 +23,10 @@ var savedActivities = [];
 var currentActivity;
 var currentCategory;
 
-logActivityButton.addEventListener('click', displayActivity);
 buttonSection.addEventListener('click', clickHandler);
-minInput.addEventListener('input', displayMinError);
-secInput.addEventListener('input', displaySecError);
-descInput.addEventListener('input', displayDescError);
+buttonSection.addEventListener('input', inputHandler);
 buttonSection.addEventListener('keyup', enableStartActivityButton);
+logActivityButton.addEventListener('click', displayActivity);
 createNewActivityButton.addEventListener('click', resetNewActivityPage);
 timerButton.addEventListener('click', function() {
   currentActivity.startTimer();
@@ -44,6 +41,16 @@ function clickHandler(event) {
     changeExerciseButton();
   } else if (event.target.classList.contains('start-activity')) {
     newActivity();
+  }
+};
+
+function inputHandler(event) {
+  if (event.target.matches('#minutes-input')) {
+    displayMinError();
+  } else if (event.target.matches('#seconds-input')) {
+    displaySecError();
+  } else if (event.target.matches('#description-input')) {
+    displayDescError();
   }
 };
 
@@ -81,16 +88,15 @@ function clearInputs() {
   minInput.value = '';
   secInput.value = '';
   descInput.value = '';
-  currentActivity.value = '';
 };
 
 function clearCategory() {
   studyButton.classList.remove('study-active');
+  studyImage.src = 'assets/study.svg';
   meditateButton.classList.remove('meditate-active');
+  meditateImage.src = 'assets/meditate.svg';
   exerciseButton.classList.remove('exercise-active');
   exerciseImage.src = 'assets/exercise.svg';
-  studyImage.src = 'assets/study.svg';
-  meditateImage.src = 'assets/meditate.svg';
 };
 
 function updateDescription() {
@@ -101,7 +107,7 @@ function updateDescription() {
 function updateTimer() {
   newActiveDisplay.classList.add('hidden');
   currentActiveDisplay.classList.remove('hidden');
-  timerInput.innerText = `${minInput.value}:${secInput.value}`;
+  timerInput.innerText = `${minInput.value.padStart(2, '0')}:${secInput.value.padStart(2, ‘0')}`;
 };
 
 function updateColor() {
@@ -147,6 +153,7 @@ function enableStartActivityButton() {
 };
 
 function displayActivity() {
+  var pastActivitiesParagraphs = document.querySelector('.past-activities-paragraphs');
   timerView.classList.add('hidden');
   createNewActivitySection.classList.remove('hidden');
   currentActiveDisplay.classList.add('hidden');
