@@ -69,6 +69,18 @@ The user can use this application to set goals for their health and productivity
 
 <img src="/assets/Our-Comp_layout.png" alt="Our desktop layout" height=auto width=75%/>
 
+#### Mobile Comp Layout:
+
+<img src="/assets/mobile-1.png" alt="Mobile Comp Layout One" height=auto width=75%/>
+
+<img src="/assets/mobile-2.png" alt="Mobile Comp Layout Two" height=auto width=75%/>
+
+#### Our Mobile Layout:
+
+<img src="/assets/Our-Mobile-1.png" alt="Our Mobile Layout One" height=auto width=75%/>
+
+<img src="/assets/Our-mobile-2.png" alt="Our Mobile Layout Two" height=auto width=75%/>
+
 ### Iteration 1
 
 - Create the Activity class
