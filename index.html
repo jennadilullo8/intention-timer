@@ -1,73 +1,73 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html lang="en">
   <head>
     <meta name=“viewport” content=“width=device-width, initial-scale=1”>
     <title>Intention Timer</title>
-    <link href='https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap' rel='stylesheet'>
-    <link rel='stylesheet' type='text/css' href='./styles.css'>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./styles.css">
   </head>
   <body>
     <header>
       <h2>INTENTION TIMER</h2>
     </header>
     <main>
-      <section class='new-activity'>
-        <h2 class='view new-activity-display'>New Activity</h2>
-        <h2 class='current-activity hidden'>Current Activity</h2>
-        <h2 class='view completed-activity-display hidden'>Completed Activity</h2>
-          <section class='button-select-category'>
+      <section class="new-activity">
+        <h2 class="view new-activity-display">New Activity</h2>
+        <h2 class="current-activity hidden">Current Activity</h2>
+        <h2 class="view completed-activity-display hidden">Completed Activity</h2>
+          <section class="button-select-category">
             <h4>Select a category:</h4>
-              <article class='button-section'>
-                <button class='study'><img src='./assets/study.svg' id='study-icon' width='25px'>
+              <article class="button-section">
+                <button class="study"><img src="./assets/study.svg" id="study-icon" width="25px">
                   Study
                 </button>
-                <button class='meditate'><img src='./assets/meditate.svg' id='meditate-icon' width='25px'>
+                <button class="meditate"><img src="./assets/meditate.svg" id="meditate-icon" width="25px">
                   Meditate
                 </button>
-                <button class='exercise'><img src='./assets/exercise.svg' id='exercise-icon' width='25px'>
+                <button class="exercise"><img src="./assets/exercise.svg" id="exercise-icon" width="25px">
                   Exercise
                 </button>
               </article>
-              <article class='description'>
-                <label for='description-input'>What would you like to accomplish during this time?</label>
-                <input type='text' name='description-input' id='description-input'>
-                <label class="desc error hidden"><img src='./assets/warning.svg' width='15px'>A description is required.</label>
+              <article class="description">
+                <label for="description-input">What would you like to accomplish during this time?</label>
+                <input type="text" name="description-input" id="description-input">
+                <label class="desc error hidden"><img src="./assets/warning.svg" width="15px">A description is required.</label>
               </article>
-              <article class='minutes'>
-                <label for='minutes-input'>Minutes</label>
-                <input type='number' min='0' max='59' onkeydown='return event.keyCode !== 69' name='minutes-input' id='minutes-input'>
-                <label class="min error hidden"><img src='./assets/warning.svg' width='15px'>Must be number between 1-59.</label>
+              <article class="minutes">
+                <label for="minutes-input">Minutes</label>
+                <input type="number" min="0" max="59" onkeydown="return event.keyCode !== 69" name="minutes-input" id="minutes-input">
+                <label class="min error hidden"><img src="./assets/warning.svg" width="15px">Must be number between 1-59.</label>
               </article>
-              <article class='seconds'>
-                <label for='seconds-input'>Seconds</label>
-                <input type='number' min='0' max='59' onkeydown='return event.keyCode !== 69' name='seconds-input' id='seconds-input'>
-                <label class="sec error hidden"><img src='./assets/warning.svg' width='15px'>Must be number between 1-59.</label>
+              <article class="seconds">
+                <label for="seconds-input">Seconds</label>
+                <input type="number" min="0" max="59" onkeydown="return event.keyCode !== 69" name="seconds-input" id="seconds-input">
+                <label class="sec error hidden"><img src="./assets/warning.svg" width="15px">Must be number between 1-59.</label>
               </article>
-              <button class='start-activity' disabled=true>START ACTIVITY</button>
+              <button class="start-activity" disabled=true>START ACTIVITY</button>
             </section>
         </section>
-        <section class='view timer-view hidden'>
-          <article class='timer-section'>
-            <p class='desc-input'>Deep Breathing</p>
+        <section class="view timer-view hidden">
+          <article class="timer-section">
+            <p class="desc-input">Deep Breathing</p>
             <h3>05:00</h3>
-            <button class='timer'>START</button>
-            <button class='log-activity hidden'>LOG ACTIVITY</button>
+            <button class="timer">START</button>
+            <button class="log-activity hidden">LOG ACTIVITY</button>
           </article>
         </section>
-        <section class='view create-a-new-activity hidden'>
-          <button class='create'>CREATE A NEW ACTIVITY</button>
+        <section class="view create-a-new-activity hidden">
+          <button class="create">CREATE A NEW ACTIVITY</button>
         </section>
       </main>
       <aside>
-        <section class='past-activities'>
+        <section class="past-activities">
           <h2>Past Activities</h2>
         </section>
-        <article class='past-activities-paragraphs'>
-          <p class='logged'>You haven't logged any activities yet.</p>
-          <p class='complete'>Complete the form to the left to get started!</p>
+        <article class="past-activities-paragraphs">
+          <p class="logged">You haven't logged any activities yet.</p>
+          <p class="complete">Complete the form to the left to get started!</p>
         </article>
       </aside>
-    <script src='./src/activity.js'></script>
-    <script src='./src/main.js'></script>
+    <script src="./src/activity.js"></script>
+    <script src="./src/main.js"></script>
   </body>
 </html>
