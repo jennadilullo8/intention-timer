@@ -212,6 +212,7 @@ h3 {
   font-size: 20px;
   border-radius: 5px;
   margin-bottom: 5%;
+  margin-right: 12px;
   height: 100%;
   padding: 7px;
   box-shadow: 3px 3px 5px 6px #26222D;
@@ -239,4 +240,65 @@ h3 {
   grid-row-start: 1;
   display: flex;
   color: #B1B0B4;
+}
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 40em) {
+  body {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      'header'
+      'main'
+      'aside';
+  }
+
+  main {
+    grid-template-columns: auto;
+  }
+
+  .start-activity {
+    width: 90%;
+    grid-column-start: 1;
+    grid-column-end: 4;
+  }
+
+  .button-section {
+    display: grid;
+    justify-content: center;
+  }
+
+  .study, .exercise, .meditate {
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+    width: 250px;
+  }
+
+  .description {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+@media screen and (max-width: 29em) {
+    body {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+      grid-template-areas:
+        'header'
+        'main'
+        'aside';
+    }
+
+    .study, .exercise, .meditate {
+      display: flex;
+      flex-direction: row;
+      height: 50px;
+      width: 200px;
+    }
+
+    input {
+      padding-top: 20px;
+    }
 }
