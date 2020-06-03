@@ -55,6 +55,7 @@ function clickHandler(event) {
 function inputHandler(event) {
   if (event.target.matches('#minutes-input') || event.target.matches('#seconds-input') || event.target.matches('#description-input')) {
     displayError();
+    hideError();
   }
 };
 
@@ -126,8 +127,20 @@ function displayError() {
   }
 };
 
+function hideError() {
+  if (minInput.checkValidity() === true) {
+    minErrorMessage.classList.add('hidden');
+  }
+  if (secInput.checkValidity() === true) {
+    secErrorMessage.classList.add('hidden');
+  }
+  if (descInput.value !== '') {
+    descErrorMessage.classList.add('hidden');
+  }
+};
+
 function enableStartActivityButton() {
-  if (currentCategory !== '' && descInput.value !== '' && minInput.value !== '' && secInput.value !== '') {
+  if (currentCategory !== undefined && descInput.value !== '' && minInput.value !== '' && secInput.value !== '') {
     activityButton.disabled = false;
   }
 };
@@ -149,6 +162,7 @@ function displayActivity() {
      </article> `
      pastActivitiesParagraphs.insertAdjacentHTML('beforeend', pastActivityHTML);
   }
+  activityButton.disabled = true;
 };
 
 function updateColorBorder(category) {
@@ -183,6 +197,7 @@ function clearInputs() {
 };
 
 function clearCategory() {
+  currentCategory = '';
   studyButton.classList.remove('study-active');
   studyImage.src = 'assets/study.svg';
   meditateButton.classList.remove('meditate-active');
