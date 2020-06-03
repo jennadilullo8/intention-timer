@@ -35,6 +35,10 @@ createNewActivityButton.addEventListener('click', resetNewActivityPage);
 timerButton.addEventListener('click', function() {
   currentActivity.startTimer();
 });
+logActivityButton.addEventListener('click', function() {
+  currentActivity.markComplete();
+  currentActivity.saveToStorage();
+});
 
 function clickHandler(event) {
   if (event.target.classList.contains('study')) {
@@ -82,7 +86,6 @@ function newActivity() {
   updateColor();
   updateDescription();
   updateTimer();
-  currentActivity.saveToStorage();
 };
 
 function updateColor() {
