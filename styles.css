@@ -282,19 +282,7 @@ h3 {
 }
 
 @media screen and (max-width: 29em) {
-    body {
-      grid-template-columns: 1fr;
-      grid-template-rows: auto;
-      grid-template-areas:
-        'header'
-        'main'
-        'aside';
-    }
-
     .study, .exercise, .meditate {
-      display: flex;
-      flex-direction: row;
-      height: 50px;
       width: 200px;
     }
 
