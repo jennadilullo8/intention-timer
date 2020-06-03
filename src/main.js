@@ -63,18 +63,21 @@ function changeStudyButton() {
   studyButton.classList.toggle('study-active');
   studyImage.src = studyImage.src.match('assets/study.svg') ? 'assets/study-active.svg' : 'assets/study.svg';
   currentCategory = 'study';
+  enableStartActivityButton();
 };
 
 function changeMeditateButton() {
   meditateButton.classList.toggle('meditate-active');
   meditateImage.src = meditateImage.src.match('assets/meditate.svg') ? 'assets/meditate-active.svg' : 'assets/meditate.svg';
   currentCategory = 'meditate';
+  enableStartActivityButton();
 };
 
 function changeExerciseButton() {
   exerciseButton.classList.toggle('exercise-active');
   exerciseImage.src = exerciseImage.src.match('assets/exercise.svg') ? 'assets/exercise-active.svg' : 'assets/exercise.svg';
   currentCategory = 'exercise';
+  enableStartActivityButton();
 };
 
 function newActivity() {
@@ -197,7 +200,7 @@ function clearInputs() {
 };
 
 function clearCategory() {
-  currentCategory = '';
+  currentCategory = undefined;
   studyButton.classList.remove('study-active');
   studyImage.src = 'assets/study.svg';
   meditateButton.classList.remove('meditate-active');
