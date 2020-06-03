@@ -1,26 +1,26 @@
 var buttonSection = document.querySelector('.button-select-category');
-var activityButton = document.querySelector('.start-activity');
-var minInput = document.querySelector('#minutes-input');
-var secInput = document.querySelector('#seconds-input');
-var descInput = document.querySelector('#description-input');
-var timerButton = document.querySelector('.timer');
-var timerInput = document.querySelector('h3');
-var completeActiveDisplay = document.querySelector('.completed-activity-display');
-var newActiveDisplay = document.querySelector('.new-activity-display');
-var currentActiveDisplay = document.querySelector('.current-activity');
 var createNewActivitySection = document.querySelector('.create-a-new-activity');
 var timerView = document.querySelector('.timer-view');
+var activityButton = document.querySelector('.start-activity');
+var timerButton = document.querySelector('.timer');
 var logActivityButton = document.querySelector('.log-activity');
-var createNewActivityButton = document.querySelector('.create');
-var exerciseButton = document.querySelector('.exercise');
-var meditateButton = document.querySelector('.meditate');
 var studyButton = document.querySelector('.study');
-var exerciseImage = document.querySelector('#exercise-icon');
-var meditateImage = document.querySelector('#meditate-icon');
-var studyImage = document.querySelector('#study-icon');
+var meditateButton = document.querySelector('.meditate');
+var exerciseButton = document.querySelector('.exercise');
+var createNewActivityButton = document.querySelector('.create');
+var descInput = document.querySelector('#description-input');
+var minInput = document.querySelector('#minutes-input');
+var secInput = document.querySelector('#seconds-input');
+var timerInput = document.querySelector('h3');
 var descErrorMessage = document.querySelector('.desc');
 var minErrorMessage = document.querySelector('.min');
 var secErrorMessage = document.querySelector('.sec');
+var completeActiveDisplay = document.querySelector('.completed-activity-display');
+var newActiveDisplay = document.querySelector('.new-activity-display');
+var currentActiveDisplay = document.querySelector('.current-activity');
+var studyImage = document.querySelector('#study-icon');
+var meditateImage = document.querySelector('#meditate-icon');
+var exerciseImage = document.querySelector('#exercise-icon');
 
 var savedActivities = [];
 var currentActivity;
@@ -30,10 +30,14 @@ window.onload = localStorageActivity();
 buttonSection.addEventListener('click', clickHandler);
 buttonSection.addEventListener('input', inputHandler);
 buttonSection.addEventListener('keyup', enableStartActivityButton);
-logActivityButton.addEventListener('click', displayActivity);
 createNewActivityButton.addEventListener('click', resetNewActivityPage);
 timerButton.addEventListener('click', function() {
   currentActivity.startTimer();
+});
+logActivityButton.addEventListener('click', displayActivity);
+logActivityButton.addEventListener('click', function() {
+  currentActivity.markComplete();
+  currentActivity.saveToStorage();
 });
 
 function clickHandler(event) {
@@ -82,7 +86,6 @@ function newActivity() {
   updateColor();
   updateDescription();
   updateTimer();
-  currentActivity.saveToStorage();
 };
 
 function updateColor() {
@@ -170,7 +173,7 @@ function resetNewActivityPage() {
   secErrorMessage.classList.add('hidden');
   clearInputs();
   clearCategory();
-  resetTimerView()
+  resetTimerView();
 };
 
 function clearInputs() {
@@ -190,11 +193,11 @@ function clearCategory() {
 
 function resetTimerView() {
   logActivityButton.classList.add('hidden');
-  timerButton.innerText = "START";
+  timerButton.innerText = 'START';
   timerButton.classList.remove('study-button');
   timerButton.classList.remove('meditate-button');
   timerButton.classList.remove('exercise-button');
-}
+};
 
 function localStorageActivity() {
   if (localStorage) {
@@ -206,6 +209,6 @@ function localStorageActivity() {
       displayActivity();
       createNewActivitySection.classList.add('hidden');
       completeActiveDisplay.classList.add('hidden');
-    }
-  }
-}
+    };
+  };
+};
