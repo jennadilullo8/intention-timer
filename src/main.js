@@ -126,8 +126,10 @@ function displayError() {
   }
 };
 
+
+
 function enableStartActivityButton() {
-  if (currentCategory !== '' && descInput.value !== '' && minInput.value !== '' && secInput.value !== '') {
+  if (currentCategory !== undefined && descInput.value !== '' && minInput.value !== '' && secInput.value !== '') {
     activityButton.disabled = false;
   }
 };
