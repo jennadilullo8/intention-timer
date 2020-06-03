@@ -209,6 +209,6 @@ function localStorageActivity() {
       displayActivity();
       createNewActivitySection.classList.add('hidden');
       completeActiveDisplay.classList.add('hidden');
-    }
-  }
+    };
+  };
 };
