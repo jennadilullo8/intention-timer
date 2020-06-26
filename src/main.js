@@ -1,3 +1,4 @@
+var body = document.querySelector('body');
 var buttonSection = document.querySelector('.button-select-category');
 var createNewActivitySection = document.querySelector('.create-a-new-activity');
 var timerView = document.querySelector('.timer-view');
@@ -27,18 +28,9 @@ var currentActivity;
 var currentCategory;
 
 window.onload = localStorageActivity();
-buttonSection.addEventListener('click', clickHandler);
+body.addEventListener('click', clickHandler);
 buttonSection.addEventListener('input', inputHandler);
 buttonSection.addEventListener('keyup', enableStartActivityButton);
-createNewActivityButton.addEventListener('click', resetNewActivityPage);
-timerButton.addEventListener('click', function() {
-  currentActivity.startTimer();
-});
-logActivityButton.addEventListener('click', displayActivity);
-logActivityButton.addEventListener('click', function() {
-  currentActivity.markComplete();
-  currentActivity.saveToStorage();
-});
 
 function clickHandler(event) {
   if (event.target.classList.contains('study')) {
@@ -49,6 +41,14 @@ function clickHandler(event) {
     changeExerciseButton();
   } else if (event.target.classList.contains('start-activity')) {
     newActivity();
+  } else if (event.target.classList.contains('create')) {
+    resetNewActivityPage();
+  } else if (event.target.classList.contains('timer')) {
+    currentActivity.startTimer();
+  } else if (event.target.classList.contains('log-activity')) {
+    displayActivity();
+    currentActivity.markComplete();
+    currentActivity.saveToStorage();
   }
 };
 
