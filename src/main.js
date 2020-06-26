@@ -84,13 +84,16 @@ function newActivity() {
   var timerView = document.querySelector('.timer-view');
   buttonSection.classList.add('hidden');
   timerView.classList.remove('hidden');
-  var category = currentCategory;
-  currentActivity = new Activity(category, descInput.value, minInput.value, secInput.value);
+  currentActivity = new Activity(currentCategory, descInput.value, parseInt(minInput.value), parseInt(secInput.value));
   savedActivities.push(currentActivity);
+  updateTimerPageDisplay();
+};
+
+function updateTimerPageDisplay() {
   updateColor();
   updateDescription();
   updateTimer();
-};
+}
 
 function updateColor() {
   if (currentCategory === 'study') {
@@ -114,6 +117,11 @@ function updateTimer() {
   currentActiveDisplay.classList.remove('hidden');
   timerInput.innerText = `${minInput.value.padStart(2, '0')}:${secInput.value.padStart(2, '0')}`;
 };
+
+function showTimerComplete() {
+  timerButton.innerText = `You crushed and did it!`;
+  logActivityButton.classList.remove('hidden');
+}
 
 function displayError() {
   if (minInput.checkValidity() === false) {
