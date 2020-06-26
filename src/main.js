@@ -170,13 +170,17 @@ function displayActivity() {
 
 function updateColorBorder(category) {
   var className = null;
-  if (category === 'study') {
-    className = 'border-right-study';
-  } else if (category === 'meditate') {
-    className = 'border-right-meditate';
-  } else if (category === 'exercise') {
-    className = 'border-right-exercise';
-  }
+  switch (category) {
+    case 'study':
+      className = 'border-right-study';
+      break;
+    case 'meditate':
+      className = 'border-right-meditate';
+      break;
+    case 'exercise':
+      className = 'border-right-exercise';
+      break;
+    }
   return className;
 };
 
