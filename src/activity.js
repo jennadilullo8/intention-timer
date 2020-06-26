@@ -9,8 +9,6 @@ class Activity {
   }
 
   startTimer() {
-    this.minutes = parseInt(minInput.value);
-    this.seconds = parseInt(secInput.value);
     var totalTime = this.minutes * 60 + this.seconds;
     var remainingMins = Math.floor(totalTime / 60);
     var remainingSecs = totalTime % 60;
@@ -23,8 +21,7 @@ class Activity {
       remainingSecs = totalTime % 60;
       if (totalTime < 0) {
         clearInterval(countDown);
-        timerButton.innerText = `You crushed and did it!`;
-        logActivityButton.classList.remove('hidden');
+        showTimerComplete();
       }
     }, 1000);
   }
